@@ -19,9 +19,12 @@ jobs:
           pip install pytumblr python-dotenv supabase
       - name: execute py script 
         run: |
-          python quotes_tumblr_bot/upload_quote.py
+          python upload_quote.py
         env:
           QUOTES_TUMBLR_BOT_CONSUMER_KEY: ${{secrets.QUOTES_TUMBLR_BOT_CONSUMER_KEY}}
           QUOTES_TUMBLR_BOT_CONSUMER_SECRET: ${{secrets.QUOTES_TUMBLR_BOT_CONSUMER_SECRET}}
           QUOTES_TUMBLR_BOT_OAUTH_TOKEN: ${{secrets.QUOTES_TUMBLR_BOT_OAUTH_TOKEN}}
           QUOTES_TUMBLR_BOT_OAUTH_SECRET: ${{secrets.QUOTES_TUMBLR_BOT_OAUTH_SECRET}}
+          SUPABASE_URL: ${{secrets.SUPABASE_URL}}
+          SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
+          URLL: ${{secrets.URLL}}
